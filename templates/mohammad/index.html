@@ -1,0 +1,19 @@
+<h2>Hello again! Please leave me a comment about my site my here.</h2>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>‏
+
+
+{% for task in tasks %}
+<div>
+    {% if task.complete == True %}
+    <strike>{{task}}</strike>
+    {% else %}
+    <span>{{task}}</span>
+    {% endif %}
+</div>
+{% endfor %}
